@@ -17,31 +17,7 @@ module.exports = class Application {
   }
 
   configServer() {
-    const corsOptions = {
-      origin: (origin, callback) => {
-        if (process.env.NODE_ENV === 'development')
-          return callback(null, true);
-        const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',').map(o => o.trim()) || [];
-        if (!origin)
-          return callback(null, true);
-        if (allowedOrigins.includes(origin))
-          return callback(null, true);
-        return callback(new Error(`Origin ${origin} not allowed by CORS policy`));
-      },
-      credentials: true,
-      methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-      allowedHeaders: [
-        'Origin',
-        'X-Requested-With',
-        'Content-Type',
-        'Accept',
-        'Authorization',
-        'Cookie',
-        'Access-Control-Allow-Origin'
-      ],
-      maxAge: 86400
-    };
-    app.use(cors(corsOptions));
+    app.use(cors("*"));
     app.use(express.urlencoded({ extended: true }));
     app.use(express.json({ limit: '1024mb' }));
   }
@@ -75,8 +51,6 @@ module.exports = class Application {
       next(createError.NotFound('آدرس مورد نظر پیدا نشد'));
     });
     app.use((error, req, res, next) => {
-      if (error.code === 'LIMIT_FILE_SIZE')
-        return res.status(400).json({ message: 'حجم فایل نباید بیشتر از 3 مگابایت باشد.' });
       const serverError = createError.InternalServerError(error);
       const message = error.message || serverError.message;
       const status = error.status || serverError.status;

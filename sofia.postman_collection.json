@@ -1,0 +1,1931 @@
+{
+  "info": {
+    "_postman_id": "6922b147-8b28-4534-9381-229cae3393fb",
+    "name": "sheikh",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "42365739",
+    "_collection_link": "https://go.postman.co/collection/42365739-6922b147-8b28-4534-9381-229cae3393fb?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "auth register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\",\r\n        \"phone\": \"09169999744\",\r\n        \"firstName\": \"mmd\",\r\n        \"lastName\": \"alem\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/auth",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "auth"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "auth login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "allCost",
+      "item": [
+        {
+          "name": "special",
+          "item": [
+            {
+              "name": "specialAdd",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-token-user",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"allCostId\" : \"69984e15c1daa14dc5e98275\", \r\n    \"price\":40000, \r\n    \"date\":\"1404/12/01\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3001/api/allcost/entry",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3001",
+                  "path": [
+                    "api",
+                    "allcost",
+                    "entry"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "specialList",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "x-token-user",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:3001/api/allcost/entry?fromDate=1404/06/23&toDate=1404/12/23",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3001",
+                  "path": [
+                    "api",
+                    "allcost",
+                    "entry"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromDate",
+                      "value": "1404/06/23",
+                      "type": "text"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "1404/12/23",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "updateEntry",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "x-token-user",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"allCostId\" : \"69984e15c1daa14dc5e98275\", \r\n    \"price\":50000,\r\n    \"date\":\"1404/09/01\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3001/api/allcost/entry/69984e56c1daa14dc5e98277",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3001",
+                  "path": [
+                    "api",
+                    "allcost",
+                    "entry",
+                    "69984e56c1daa14dc5e98277"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "deleteEntry",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "x-token-user",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3001/api/allcost/entry/69984e5ec1daa14dc5e98279",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3001",
+                  "path": [
+                    "api",
+                    "allcost",
+                    "entry",
+                    "69984e5ec1daa14dc5e98279"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "allCost create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"اسنپ\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/allcost",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "allcost"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "allCost list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\",\r\n        \"phone\": \"09169999744\",\r\n        \"firstName\": \"mmd\",\r\n        \"lastName\": \"alem\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/allcost",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "allcost"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "allCost special-list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/allcost/special-list",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "allcost",
+                "special-list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "allCost update",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"mmdi\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/allcost/69982bd7d72376af4a060171",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "allcost",
+                "69982bd7d72376af4a060171"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "allCost delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/allcost/69982bd7d72376af4a060171",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "allcost",
+                "69982bd7d72376af4a060171"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "assist",
+      "item": [
+        {
+          "name": "assist create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"محمد عالم زاده\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/assist",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "assist"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "assist list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\",\r\n        \"phone\": \"09169999744\",\r\n        \"firstName\": \"mmd\",\r\n        \"lastName\": \"alem\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/assist/special-list",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "assist",
+                "special-list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "assist special-list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\",\r\n        \"phone\": \"09169999744\",\r\n        \"firstName\": \"mmd\",\r\n        \"lastName\": \"alem\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/assist",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "assist"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "assist update",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"محمد عالم \"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/assist/69982d53d72376af4a06017b",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "assist",
+                "69982d53d72376af4a06017b"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "assist delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\",\r\n        \"phone\": \"09169999744\",\r\n        \"firstName\": \"mmd\",\r\n        \"lastName\": \"alem\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/assist/69982d52d72376af4a060179",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "assist",
+                "69982d52d72376af4a060179"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "customer",
+      "item": [
+        {
+          "name": "customer create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODUxMjcsImV4cCI6MTc3Njc2OTEyN30.BEwCZYBS0prpEF55BT-NDZvYmIHgILyCnrUDwOPz9JA",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"patientName\": \"mmdalem\",\r\n        \"surgery\":{\"surgeryId\":\"6998316f9506aceadbe14cd1\" , \"price\":90000000},\r\n        \"doctor\":{\"doctorId\":\"69982a01775d027912d1eca7\" , \"percent\":15,\"price\":200000},\r\n        \"initialCosts\": [{\"initialPriceId\":\"69982e71d72376af4a06018e\" ,\"price\":300000}],\r\n        \"reagent\": {\"reagentId\":\"69982edb9506aceadbe14cbe\" , \"percent\":5,\"price\":200000},\r\n        \"assist\": [{\"assistId\":\"69982d53d72376af4a06017b\" , \"desc\":\"کارمند\",\"price\":200000}],\r\n        \"sharedCosts\": [{\"sharedId\":\"699830dd9506aceadbe14ccb\" , \"date\":\"1404/12/01\",\"price\":400000}],\r\n        \"deposit\": [{\"desc\":\"واریزی 1\" , \"date\":\"1404/12/01\",\"price\":5000000}],\r\n        \"hospital\": [{\"hospitalId\":\"69982dd2d72376af4a060183\" , \"desc\":\"1404/12/01\",\"price\":5000000}],\r\n        \"date\": \"69982edb9506aceadbe14cbe\",\r\n        \"clinicPrice\": 6000000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/customer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "customer"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "customer list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODUxMjcsImV4cCI6MTc3Njc2OTEyN30.BEwCZYBS0prpEF55BT-NDZvYmIHgILyCnrUDwOPz9JA",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/customer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "customer"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "customer find one",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODUxMjcsImV4cCI6MTc3Njc2OTEyN30.BEwCZYBS0prpEF55BT-NDZvYmIHgILyCnrUDwOPz9JA",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\",\r\n        \"phone\": \"09169999744\",\r\n        \"firstName\": \"mmd\",\r\n        \"lastName\": \"alem\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/customer/69983ef8e340e02dc2562127",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "customer",
+                "69983ef8e340e02dc2562127"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "customer update",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODUxMjcsImV4cCI6MTc3Njc2OTEyN30.BEwCZYBS0prpEF55BT-NDZvYmIHgILyCnrUDwOPz9JA",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"patientName\": \"mmdalem\",\r\n        \"surgery\":{\"surgeryId\":\"6998316f9506aceadbe14cd1\" , \"price\":90000000},\r\n        \"doctor\":{\"doctorId\":\"69982a01775d027912d1eca7\" , \"percent\":15,\"price\":200000},\r\n        \"initialCosts\": [{\"initialPriceId\":\"69982e71d72376af4a06018e\" ,\"price\":300000}],\r\n        \"reagent\": {\"reagentId\":\"69982edb9506aceadbe14cbe\" , \"percent\":5,\"price\":200000},\r\n        \"assist\": [{\"assistId\":\"69982d53d72376af4a06017b\" , \"desc\":\"کارمند\",\"price\":200000}],\r\n        \"sharedCosts\": [{\"sharedId\":\"699830dd9506aceadbe14ccb\" , \"date\":\"1404/12/01\",\"price\":400000}],\r\n        \"deposit\": [{\"desc\":\"واریزی 1\" , \"date\":\"1404/12/01\",\"price\":5000000}],\r\n        \"hospital\": [{\"hospitalId\":\"69982dd2d72376af4a060183\" , \"desc\":\"1404/12/01\",\"price\":5000000}],\r\n        \"date\": \"69982edb9506aceadbe14cbe\",\r\n        \"clinicPrice\": 60000000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/customer/69983ef8e340e02dc2562127",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "customer",
+                "69983ef8e340e02dc2562127"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "customer delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODUxMjcsImV4cCI6MTc3Njc2OTEyN30.BEwCZYBS0prpEF55BT-NDZvYmIHgILyCnrUDwOPz9JA",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\",\r\n        \"phone\": \"09169999744\",\r\n        \"firstName\": \"mmd\",\r\n        \"lastName\": \"alem\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/customer/69983f912c1f706ea7bb5a92",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "customer",
+                "69983f912c1f706ea7bb5a92"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "doctor",
+      "item": [
+        {
+          "name": "doctor create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1NzU5NTgsImV4cCI6MTc3Njc1OTk1OH0.6-1Zl5YbCCty9Db5LthnVjuJ012HDtBuPG0eHhfNJK4",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"محمد عالم زاده\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/doctor",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "doctor"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "doctor list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1NzU5NTgsImV4cCI6MTc3Njc1OTk1OH0.6-1Zl5YbCCty9Db5LthnVjuJ012HDtBuPG0eHhfNJK4",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\",\r\n        \"phone\": \"09169999744\",\r\n        \"firstName\": \"mmd\",\r\n        \"lastName\": \"alem\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/doctor",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "doctor"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "doctor special-list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1NzU5NTgsImV4cCI6MTc3Njc1OTk1OH0.6-1Zl5YbCCty9Db5LthnVjuJ012HDtBuPG0eHhfNJK4",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\",\r\n        \"phone\": \"09169999744\",\r\n        \"firstName\": \"mmd\",\r\n        \"lastName\": \"alem\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/doctor/special-list",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "doctor",
+                "special-list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "doctor update",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1NzU5NTgsImV4cCI6MTc3Njc1OTk1OH0.6-1Zl5YbCCty9Db5LthnVjuJ012HDtBuPG0eHhfNJK4",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"محمد عالم زاده\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/doctor/69981ae9ae2cf33ac97e4da0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "doctor",
+                "69981ae9ae2cf33ac97e4da0"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "doctor delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1NzU5NTgsImV4cCI6MTc3Njc1OTk1OH0.6-1Zl5YbCCty9Db5LthnVjuJ012HDtBuPG0eHhfNJK4",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/doctor/69981ae9ae2cf33ac97e4da0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "doctor",
+                "69981ae9ae2cf33ac97e4da0"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "hospital",
+      "item": [
+        {
+          "name": "hospital create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"محمد عالم زاده\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/hospital",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "hospital"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "hospital list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/hospital",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "hospital"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "hospital special-list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/hospital/special-list",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "hospital",
+                "special-list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "hospital update",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"اتیه\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/hospital/69982dd2d72376af4a060183",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "hospital",
+                "69982dd2d72376af4a060183"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "hospital delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/hospital/69982dc5d72376af4a060180",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "hospital",
+                "69982dc5d72376af4a060180"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "initialCost",
+      "item": [
+        {
+          "name": "initialCost create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"اسنپ\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/initialcost",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "initialcost"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "initialCost list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\",\r\n        \"phone\": \"09169999744\",\r\n        \"firstName\": \"mmd\",\r\n        \"lastName\": \"alem\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/initialcost",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "initialcost"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "initialCost special-list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\",\r\n        \"phone\": \"09169999744\",\r\n        \"firstName\": \"mmd\",\r\n        \"lastName\": \"alem\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/initialcost/special-list",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "initialcost",
+                "special-list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "initialCost update",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"2اسنپ\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/initialcost/69982e71d72376af4a06018e",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "initialcost",
+                "69982e71d72376af4a06018e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "initialCost delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\",\r\n        \"phone\": \"09169999744\",\r\n        \"firstName\": \"mmd\",\r\n        \"lastName\": \"alem\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/initialcost/69982e63d72376af4a06018b",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "initialcost",
+                "69982e63d72376af4a06018b"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "reagent",
+      "item": [
+        {
+          "name": "reagent create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"مهدی شیخ\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/reagent",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "reagent"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reagent list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/reagent",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "reagent"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reagent special-list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/reagent/special-list",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "reagent",
+                "special-list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reagent update",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"سید مهدی شیخ\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/reagent/69982edb9506aceadbe14cbe",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "reagent",
+                "69982edb9506aceadbe14cbe"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reagent delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/reagent/69982edd9506aceadbe14cc0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "reagent",
+                "69982edd9506aceadbe14cc0"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "sharedCost",
+      "item": [
+        {
+          "name": "sharedCost create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"پانسمان\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/sharedcost",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "sharedcost"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "sharedCost list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/sharedcost",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "sharedcost"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "sharedCost special-list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/sharedcost/special-list",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "sharedcost",
+                "special-list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "sharedCost update",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"پانسمان مخصوص\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/sharedcost/699830dd9506aceadbe14ccb",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "sharedcost",
+                "699830dd9506aceadbe14ccb"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "sharedCost delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/sharedcost/6998309b9506aceadbe14cc8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "sharedcost",
+                "6998309b9506aceadbe14cc8"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "surgery",
+      "item": [
+        {
+          "name": "surgery create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"بینی\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/surgery",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "surgery"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "surgery list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/surgery",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "surgery"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "surgery special-list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/surgery/special-list",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "surgery",
+                "special-list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "surgery update",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"بینی گوشتی\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/surgery/6998316f9506aceadbe14cd1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "surgery",
+                "6998316f9506aceadbe14cd1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "surgery delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/surgery/699831709506aceadbe14cd3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "surgery",
+                "699831709506aceadbe14cd3"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

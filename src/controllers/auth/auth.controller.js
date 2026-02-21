@@ -10,12 +10,10 @@ class authController extends controller {
   async create(req, res, next) {
     try {
 
-      console.log(req.body);
-
       const phone = req.body?.phone;
 
       const user = await userModel.findOne({ phone }).exec();
-      if (user) throw sendError(res, 401, "موبایل وارد شده وجود دارد");
+      if (user) return sendError(res, 401, "موبایل وارد شده وجود دارد");
 
       // ------- HASH ID ------- //
       const hashIdPublicSalt = randomstring.generate(128);
@@ -30,7 +28,7 @@ class authController extends controller {
       // ------- PASSWORD ------- //
       let password = null;
       if (req.body.password) password = await hashString(req.body.password);
-      if (!password) throw sendError(res, 401, "رمز عبور وارد نشده است");
+      if (!password) return sendError(res, 401, "رمز عبور وارد نشده است");
 
       const newUser = new userModel({
         username: req.body.username,

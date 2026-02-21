@@ -5,54 +5,67 @@ const Schema = mongoose.Schema
 
 const customerSchema = new Schema(
   {
-    patientName: {
-      type: String,
-      lowercase: true,
-      required: [true, 'نام کاربری الزامی است'],
-      maxlength: [50, 'نام کاربری نباید بیشتر از 50 کاراکتر باشد'],
-    },
-    surgeryId: { type: mongoose.Types.ObjectId, ref: "Surgery" },
-    sharedId: { type: mongoose.Types.ObjectId, ref: "Surgery" },
-    deposit: {
-      desc: { type: String },
-      date: { type: Date },
-      price: { type: Number }
-    },
-    surgery: { type: mongoose.Types.ObjectId, ref: "Surgery" },
-    surgery: { type: mongoose.Types.ObjectId, ref: "Surgery" },
-    surgery: { type: mongoose.Types.ObjectId, ref: "Surgery" },
+    patientName: { type: String, required: true, trim: true },
 
-    password: {
-      type: String,
-      required: [true, 'رمز عبور الزامی است'],
-      minlength: [6, 'رمزعبور باید حداقل 6 کاراکتر باشد'],
+    surgery: {
+      surgeryId: { type: mongoose.Schema.Types.ObjectId, ref: "Surgery", required: true },
+      price: { type: Number, required: true },
     },
-    firstName: {
-      type: String,
-      trim: true,
-      maxlength: [50, 'نام نباید بیشتر از 50 کاراکتر باشد']
+
+    doctor: {
+      doctorId: { type: mongoose.Schema.Types.ObjectId, ref: "Doctor", required: true },
+      percent: { type: Number, required: true },
+      price: { type: Number, required: true },
     },
-    lastName: {
-      type: String,
-      trim: true,
-      maxlength: [50, 'نام خانوادگی نباید بیشتر از 50 کاراکتر باشد']
+
+    initialCosts: [
+      {
+        initialPriceId: { type: mongoose.Schema.Types.ObjectId, ref: "InitialCosts", required: true },
+        price: { type: Number, required: true },
+      },
+    ],
+
+    reagent: {
+      reagentId: { type: mongoose.Schema.Types.ObjectId, ref: "Reagent" },
+      percent: { type: Number },
+      price: { type: Number },
     },
-    phone: {
-      type: String,
+
+    assist: {
+      assistId: { type: mongoose.Schema.Types.ObjectId, ref: "Assist" },
+      desc: { type: String, default: "" },
+      price: { type: Number },
     },
-    role: {
-      type: String,
-      enum: ['user'],
-      default: 'user'
-    },
-    isActive: {
-      type: Boolean,
-      default: true
-    },
+
+    sharedCosts: [
+      {
+        sharedId: { type: mongoose.Schema.Types.ObjectId, ref: "SharedCosts", required: true },
+        date: { type: String },
+        price: { type: Number, required: true },
+      },
+    ],
+
+    deposit: [
+      {
+        desc: { type: String, default: "" },
+        date: { type: String },
+        price: { type: Number, required: true },
+      },
+    ],
+
+    hospital: [
+      {
+        hospitalId: { type: mongoose.Schema.Types.ObjectId, ref: "Hospital", required: true },
+        desc: { type: String, default: "" },
+        price: { type: Number, required: true },
+      },
+    ],
+
+    date: { type: String, required: true },
+
+    clinicPrice: { type: Number, required: true },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
 customerSchema.plugin(mongoosePaginate);
