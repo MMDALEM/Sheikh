@@ -68,6 +68,45 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "auth validate",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/auth/validate",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "auth",
+                "validate"
+              ]
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -296,6 +335,45 @@
               "path": [
                 "api",
                 "allcost"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "allCost findOne",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\",\r\n        \"phone\": \"09169999744\",\r\n        \"firstName\": \"mmd\",\r\n        \"lastName\": \"alem\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/allcost/69984e15c1daa14dc5e98275",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "allcost",
+                "69984e15c1daa14dc5e98275"
               ]
             }
           },
@@ -869,6 +947,45 @@
           "response": []
         },
         {
+          "name": "doctor findOne",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1NzU5NTgsImV4cCI6MTc3Njc1OTk1OH0.6-1Zl5YbCCty9Db5LthnVjuJ012HDtBuPG0eHhfNJK4",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\",\r\n        \"phone\": \"09169999744\",\r\n        \"firstName\": \"mmd\",\r\n        \"lastName\": \"alem\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/doctor/69982a03775d027912d1eca9",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "doctor",
+                "69982a03775d027912d1eca9"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "name": "doctor special-list",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
@@ -1053,6 +1170,45 @@
               "path": [
                 "api",
                 "hospital"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "hospital findOne",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/hospital/69982dd2d72376af4a060183",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "hospital",
+                "69982dd2d72376af4a060183"
               ]
             }
           },
@@ -1248,6 +1404,45 @@
           "response": []
         },
         {
+          "name": "initialCost findOne",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"username\": \"mmdalem\",\r\n        \"password\":\"12345\",\r\n        \"phone\": \"09169999744\",\r\n        \"firstName\": \"mmd\",\r\n        \"lastName\": \"alem\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/initialcost/69982e71d72376af4a06018e",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "initialcost",
+                "69982e71d72376af4a06018e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "name": "initialCost special-list",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
@@ -1431,6 +1626,45 @@
               "path": [
                 "api",
                 "reagent"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reagent findOne",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/reagent/69982edb9506aceadbe14cbe",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "reagent",
+                "69982edb9506aceadbe14cbe"
               ]
             }
           },
@@ -1626,6 +1860,45 @@
           "response": []
         },
         {
+          "name": "sharedCost findOne",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/sharedcost/699830dd9506aceadbe14ccb",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "sharedcost",
+                "699830dd9506aceadbe14ccb"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "name": "sharedCost special-list",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
@@ -1809,6 +2082,45 @@
               "path": [
                 "api",
                 "surgery"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "surgery findOne",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-token-user",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYXNoSWRBdXRoIjoiODk0MzZlNWQ2MTk3YmI4NTgyMzBjNDg0N2E3NzI5NDMiLCJpYXQiOjE3NzE1ODAzNjgsImV4cCI6MTc3Njc2NDM2OH0.S_xyvvtgIEHBfn7SR4ilzbGt4Xeoi5Z1MQWpas6hWuc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/surgery/6998316f9506aceadbe14cd1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "surgery",
+                "6998316f9506aceadbe14cd1"
               ]
             }
           },

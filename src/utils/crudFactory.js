@@ -20,6 +20,17 @@ function createCrudController(Model) {
       }
     },
 
+    // FINDONE
+    async findOne(req, res, next) {
+      try {
+        const doc = await Model.findById(req.params.id);
+        if (!doc) return res.status(404).json({ status: "failed", message: "Not found" });
+        res.json({ status: "success", data: doc });
+      } catch (err) {
+        next(err);
+      }
+    },
+
     // UPDATE
     async update(req, res, next) {
       try {

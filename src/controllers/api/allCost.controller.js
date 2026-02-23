@@ -1,6 +1,4 @@
-
-// const allCostModel = require("../../models/AllCost.model");
-const allCostModel = require("../../models/AllCost.model");
+const allCostModel = require("../../models/allcost.model");
 const AllCostEntry = require("../../models/allcostentry.model");
 const createCrudController = require("../../utils/crudFactory");
 const { buildDateFilter } = require("../../utils/dateFilter");
