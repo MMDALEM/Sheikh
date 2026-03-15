@@ -1,9 +1,6 @@
 const SharedCost = require("../../models/sharedcosts.model");
 const Customer = require("../../models/customer.model");
-const createCrudController = require("../../utils/crudFactory");
 const { buildDateFilter } = require("../../utils/dateFilter");
-
-const crud = createCrudController(SharedCost);
 
 async function specialList(req, res, next) {
   try {
@@ -56,4 +53,64 @@ async function specialList(req, res, next) {
   }
 }
 
-module.exports = { ...crud, specialList };
+async function create(req, res, next) {
+  try {
+    const doc = await SharedCost.create({
+      name: req.body.name,
+      price: req.body.price,
+      date: req.body.date,
+    });
+    res.status(201).json({ status: "success", data: doc });
+  } catch (err) {
+    next(err);
+  }
+}
+
+async function update(req, res, next) {
+  try {
+    const updateData = {};
+    if (req.body.name !== undefined) updateData.name = req.body.name;
+    if (req.body.price !== undefined) updateData.price = req.body.price;
+    if (req.body.date !== undefined) updateData.date = req.body.date;
+
+    const doc = await SharedCost.findByIdAndUpdate(
+      req.params.id,
+      updateData,
+    );
+    if (!doc) return res.status(404).json({ status: "failed", message: "Not found" });
+    res.json({ status: "success", data: doc });
+  } catch (err) {
+    next(err);
+  }
+}
+
+async function list(req, res, next) {
+  try {
+    const docs = await SharedCost.find().sort({ createdAt: -1 });
+    res.json({ status: "success", data: docs });
+  } catch (err) {
+    next(err);
+  }
+}
+
+async function findOne(req, res, next) {
+  try {
+    const doc = await SharedCost.findById(req.params.id);
+    if (!doc) return res.status(404).json({ status: "failed", message: "Not found" });
+    res.json({ status: "success", data: doc });
+  } catch (err) {
+    next(err);
+  }
+}
+
+async function remove(req, res, next) {
+  try {
+    const doc = await SharedCost.findByIdAndDelete(req.params.id);
+    if (!doc) return res.status(404).json({ status: "failed", message: "Not found" });
+    return res.json({ status: "success", message: "Deleted" });
+  } catch (err) {
+    next(err);
+  }
+}
+
+module.exports = { specialList, create, update, list, findOne, remove };

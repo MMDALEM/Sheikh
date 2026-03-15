@@ -6,7 +6,7 @@ const Schema = mongoose.Schema
 const doctorSchema = new Schema(
   {
     name: { type: String, default: '' },
-    customer: [{ type: mongoose.Types.ObjectId, ref: "Customer", default: [] }],
+    list: [{ type: String, default: [] }],
   },
   {
     timestamps: true,

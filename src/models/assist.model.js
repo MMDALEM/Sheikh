@@ -6,7 +6,6 @@ const Schema = mongoose.Schema
 const assistSchema = new Schema(
   {
     name: { type: String, default: '' },
-    customer: [{ type: mongoose.Types.ObjectId, ref: "Customer", default: [] }],
   },
   {
     timestamps: true,

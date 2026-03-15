@@ -1,12 +1,12 @@
 const express = require("express");
+const sharedCostController = require("../../controllers/api/sharedCost.controller");
 const router = express.Router();
-const ctrl = require("../../controllers/api/sharedCost.controller");
 
-router.get("/special-list", ctrl.specialList);
-router.post("/", ctrl.create);
-router.get("/", ctrl.list);
-router.get("/:id", ctrl.findOne);
-router.put("/:id", ctrl.update);
-router.delete("/:id", ctrl.delete);
+router.get("/special-list", sharedCostController.specialList);
+router.post("/", sharedCostController.create);
+router.get("/", sharedCostController.list);
+router.get("/:id", sharedCostController.findOne);
+router.put("/:id", sharedCostController.update);
+router.delete("/:id", sharedCostController.remove);
 
 module.exports = { sharedCostRouter: router };

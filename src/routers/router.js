@@ -5,10 +5,6 @@ const { checkToken } = require('../middlewares/checkToken');
 const { authRouter } = require('./auth/auth.routes');
 router.use('/api/auth', authRouter);
 
-//**********router api***********/
-const { apiRouter } = require('./api/api.routes');
-router.use('/api/', checkToken, apiRouter);
-
 //**********router allCost***********/
 const { allCostRouter } = require('./api/allCost.routes');
 router.use('/api/allcost', checkToken, allCostRouter);

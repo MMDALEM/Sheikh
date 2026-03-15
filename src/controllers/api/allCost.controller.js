@@ -67,6 +67,7 @@ async function listEntries(req, res, next) {
     const dateFilter = buildDateFilter(req.query, "date");
     Object.assign(filter, dateFilter);
 
+
     const entries = await AllCostEntry.find(filter).populate("allCostId").sort({ createdAt: -1 });
     return res.json({ status: "success", data: entries });
   } catch (err) {

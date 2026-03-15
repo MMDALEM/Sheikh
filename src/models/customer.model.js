@@ -1,27 +1,26 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
-const Schema = mongoose.Schema
-
+const Schema = mongoose.Schema;
 
 const customerSchema = new Schema(
   {
-    patientName: { type: String, required: true, trim: true },
+    patientName: { type: String, trim: true },
 
     surgery: {
-      surgeryId: { type: mongoose.Schema.Types.ObjectId, ref: "Surgery", required: true },
-      price: { type: Number, required: true },
+      surgeryId: { type: mongoose.Schema.Types.ObjectId, ref: "Surgery" },
+      price: { type: Number },
     },
 
     doctor: {
-      doctorId: { type: mongoose.Schema.Types.ObjectId, ref: "Doctor", required: true },
-      percent: { type: Number, required: true },
-      price: { type: Number, required: true },
+      doctorId: { type: mongoose.Schema.Types.ObjectId, ref: "Doctor" },
+      percent: { type: Number },
+      price: { type: Number },
     },
 
     initialCosts: [
       {
-        initialPriceId: { type: mongoose.Schema.Types.ObjectId, ref: "InitialCosts", required: true },
-        price: { type: Number, required: true },
+        initialPriceId: { type: mongoose.Schema.Types.ObjectId, ref: "InitialCosts" },
+        price: { type: Number },
       },
     ],
 
@@ -37,33 +36,29 @@ const customerSchema = new Schema(
       price: { type: Number },
     },
 
-    sharedCosts: [
-      {
-        sharedId: { type: mongoose.Schema.Types.ObjectId, ref: "SharedCosts", required: true },
-        date: { type: String },
-        price: { type: Number, required: true },
-      },
-    ],
-
     deposit: [
       {
         desc: { type: String, default: "" },
         date: { type: String },
-        price: { type: Number, required: true },
+        price: { type: Number },
       },
     ],
 
     hospital: [
       {
-        hospitalId: { type: mongoose.Schema.Types.ObjectId, ref: "Hospital", required: true },
+        hospitalId: { type: mongoose.Schema.Types.ObjectId, ref: "Hospital" },
         desc: { type: String, default: "" },
-        price: { type: Number, required: true },
+        price: { type: Number },
       },
     ],
 
-    date: { type: String, required: true },
+    date: { type: String },
+    clinicPrice: { type: Number },
 
-    clinicPrice: { type: Number, required: true },
+    oldAssist: { type: Number, default: 0 },
+    oldHospital: { type: Number, default: 0 },
+    sideCost: { type: Number, default: 0 },
+    clinicHospital: { type: Number, default: 0 },
   },
   { timestamps: true }
 );

@@ -1,16 +1,14 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
-const Schema = mongoose.Schema
-
+const Schema = mongoose.Schema;
 
 const sharedcostsSchema = new Schema(
   {
     name: { type: String, default: '' },
-    customer: [{ type: mongoose.Types.ObjectId, ref: "Customer", default: [] }],
+    price: { type: Number, default: 0 },
+    date: { type: String, default: '' },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
 sharedcostsSchema.plugin(mongoosePaginate);

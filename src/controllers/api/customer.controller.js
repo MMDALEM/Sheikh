@@ -62,7 +62,7 @@ async function getById(req, res, next) {
 // UPDATE
 async function update(req, res, next) {
   try {
-    const customer = await Customer.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+    const customer = await Customer.findByIdAndUpdate(req.params.id, req.body, { runValidators: true });
     if (!customer) return res.status(404).json({ success: false, message: "Not found" });
     res.json({ success: true, data: customer });
   } catch (err) {

@@ -11,8 +11,8 @@ router.put("/:id", ctrl.update);
 router.delete("/:id", ctrl.delete);
 
 // Entry (specialAdd) routes
+router.patch("/entry", ctrl.listEntries);
 router.post("/entry", ctrl.specialAdd);
-router.get("/entry", ctrl.listEntries);
 router.put("/entry/:id", ctrl.updateEntry);
 router.delete("/entry/:id", ctrl.deleteEntry);
 
