@@ -22,7 +22,6 @@ async function list(req, res, next) {
       .populate("initialCosts.initialPriceId")
       .populate("reagent.reagentId")
       .populate("assist.assistId")
-      .populate("sharedCosts.sharedId")
       .populate("hospital.hospitalId")
       .sort({ createdAt: -1 });
 
@@ -49,7 +48,6 @@ async function getById(req, res, next) {
       .populate("initialCosts.initialPriceId")
       .populate("reagent.reagentId")
       .populate("assist.assistId")
-      .populate("sharedCosts.sharedId")
       .populate("hospital.hospitalId");
 
     if (!customer) return res.status(404).json({ success: false, message: "Not found" });

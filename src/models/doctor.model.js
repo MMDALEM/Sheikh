@@ -6,7 +6,7 @@ const Schema = mongoose.Schema
 const doctorSchema = new Schema(
   {
     name: { type: String, default: '' },
-    list: [{ type: String, default: [] }],
+    list: { type: [Object], default: [] },
   },
   {
     timestamps: true,

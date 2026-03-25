@@ -1,7 +1,7 @@
 const Doctor = require("../../models/doctor.model");
-const SharedCosts = require("../../models/sharedcosts.model");
 const createCrudController = require("../../utils/crudFactory");
 const { buildDateFilter } = require("../../utils/dateFilter");
+const Customer = require("../../models/customer.model");
 
 const crud = createCrudController(Doctor);
 
@@ -9,9 +9,36 @@ async function specialList(req, res, next) {
   try {
     const dateFilter = buildDateFilter(req.query);
 
-    const result = await SharedCosts.find(dateFilter).sort({ date: -1 });
+    const result = await Customer.aggregate([
+      { $match: dateFilter },
+      {
+        $group: {
+          _id: "$doctor.doctorId",
+          totalPrice: { $sum: "$doctor.price" },
+          count: { $sum: 1 },
+        },
+      },
+      {
+        $lookup: {
+          from: "doctors",
+          localField: "_id",
+          foreignField: "_id",
+          as: "doctorInfo",
+        },
+      },
+      { $unwind: "$doctorInfo" },
+      {
+        $project: {
+          _id: 1,
+          name: "$doctorInfo.name",
+          totalPrice: 1,
+          count: 1,
+        },
+      },
+      { $sort: { totalPrice: -1 } },
+    ]);
 
-    const grandTotal = result.reduce((sum, r) => sum + (r.price || 0), 0);
+    const grandTotal = result.reduce((sum, r) => sum + r.totalPrice, 0);
 
     res.json({ success: true, data: result, grandTotal });
   } catch (err) {

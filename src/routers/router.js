@@ -41,4 +41,12 @@ router.use('/api/sharedcost', checkToken, sharedCostRouter);
 const { surgeryRouter } = require('./api/surgery.routes');
 router.use('/api/surgery', checkToken, surgeryRouter);
 
+//**********router salary***********/
+const { salaryRouter } = require('./api/salary.routes');
+router.use('/api/salary', checkToken, salaryRouter);
+
+//**********router lunch***********/
+const { lunchRouter } = require('./api/lunch.routes');
+router.use('/api/lunch', checkToken, lunchRouter);
+
 module.exports = { AllRouters: router };
