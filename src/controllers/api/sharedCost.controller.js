@@ -55,12 +55,12 @@ async function specialList(req, res, next) {
 
 async function create(req, res, next) {
   try {
-    const doc = await SharedCost.create({
+    const doc = await SharedCosts.create({
       name: req.body.name,
       price: req.body.price,
       date: req.body.date,
     });
-    res.status(201).json({ status: "success", data: doc });
+    res.status(201).json({ status: 'success', data: doc });
   } catch (err) {
     next(err);
   }
@@ -73,12 +73,9 @@ async function update(req, res, next) {
     if (req.body.price !== undefined) updateData.price = req.body.price;
     if (req.body.date !== undefined) updateData.date = req.body.date;
 
-    const doc = await SharedCost.findByIdAndUpdate(
-      req.params.id,
-      updateData,
-    );
-    if (!doc) return res.status(404).json({ status: "failed", message: "Not found" });
-    res.json({ status: "success", data: doc });
+    const doc = await SharedCosts.findByIdAndUpdate(req.params.id, updateData, { new: true });
+    if (!doc) return res.status(404).json({ status: 'failed', message: 'Not found' });
+    res.json({ status: 'success', data: doc });
   } catch (err) {
     next(err);
   }
@@ -86,13 +83,23 @@ async function update(req, res, next) {
 
 async function list(req, res, next) {
   try {
-    const docs = await SharedCost.find().sort({ createdAt: -1 });
-    res.json({ status: "success", data: docs });
+    const filter = buildDateFilter(req.query);
+
+    const docs =
+      await SharedCost.paginate(filter, {
+        page: parseInt(req.query.page) || 1,
+        limit: parseInt(req.query.limit) || 10,
+        sort: { createdAt: -1 },
+      });
+
+    res.json({
+      status: "success",
+      data: docs,
+    });
   } catch (err) {
     next(err);
   }
 }
-
 async function findOne(req, res, next) {
   try {
     const doc = await SharedCost.findById(req.params.id);

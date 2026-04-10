@@ -50,18 +50,32 @@ async function specialList(req, res, next) {
 // Override list to support date filter based on customer date
 async function list(req, res, next) {
   try {
-    const { fromDate, toDate } = req.query;
+    const { fromDate, toDate, page, limit } = req.query;
+    const paginateOptions = {
+      page: parseInt(page) || 1,
+      limit: parseInt(limit) || 10,
+      sort: { createdAt: -1 },
+    };
 
     if (fromDate || toDate) {
       const dateFilter = buildDateFilter(req.query);
-      const customers = await Customer.find(dateFilter).populate("surgery.surgeryId");
+      const customers = await Customer.find(dateFilter).populate("surgery");
       const surgeryIds = [...new Set(customers.map((c) => c.surgery.surgeryId?.toString()).filter(Boolean))];
-      const surgeries = await Surgery.find({ _id: { $in: surgeryIds } });
-      return res.json({ success: true, data: surgeries });
+
+      const docs = await Surgery.paginate({ _id: { $in: surgeryIds } }, paginateOptions);
+
+      return res.json({
+        success: true,
+        data: docs,
+      });
     }
 
-    const docs = await Surgery.find().sort({ createdAt: -1 });
-    res.json({ success: true, data: docs });
+    const docs = await Surgery.paginate({}, paginateOptions);
+
+    res.json({
+      success: true,
+      data: docs,
+    });
   } catch (err) {
     next(err);
   }

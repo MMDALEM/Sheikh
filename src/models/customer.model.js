@@ -36,13 +36,7 @@ const customerSchema = new Schema(
       price: { type: Number },
     },
 
-    deposit: [
-      {
-        desc: { type: String, default: "" },
-        date: { type: String },
-        price: { type: Number },
-      },
-    ],
+    deposit: { type: [Object], default: [] },
 
     hospital: [
       {

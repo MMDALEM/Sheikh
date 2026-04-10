@@ -13,8 +13,18 @@ function createCrudController(Model) {
     // LIST
     async list(req, res, next) {
       try {
-        const docs = await Model.find().sort({ createdAt: -1 });
-        res.json({ status: "success", data: docs });
+        const docs = await Model.paginate({},
+          {
+            page: parseInt(req.query.page) || 1,
+            limit: parseInt(req.query.limit) || 10,
+            sort: { createdAt: -1 },
+          }
+        );
+
+        res.json({
+          status: "success",
+          data: docs,
+        });
       } catch (err) {
         next(err);
       }

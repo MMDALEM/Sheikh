@@ -8,8 +8,15 @@ const crud = createCrudController(allCostModel);
 // specialAdd: create an entry for a specific allCost category
 async function specialAdd(req, res, next) {
   try {
-    const { allCostId, price, date } = req.body;
-    const entry = await AllCostEntry.create({ allCostId, price, date });
+    const { allCostId, price, date, from, desc, list } = req.body;
+    const entry = await AllCostEntry.create({
+      allCostId,
+      price,
+      date,
+      from,
+      desc,
+      list: list || [],
+    });
     return res.status(201).json({ status: "success", data: entry });
   } catch (err) {
     next(err);
@@ -78,7 +85,6 @@ async function listEntries(req, res, next) {
 // Update an entry
 async function updateEntry(req, res, next) {
   try {
-    console.log(req.params.id)
     const entry = await AllCostEntry.findByIdAndUpdate(req.params.id, req.body);
     if (!entry) return res.status(404).json({ status: "failed", message: "Not found" });
     return res.json({ status: "success", data: entry });

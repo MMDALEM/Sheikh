@@ -49,4 +49,8 @@ router.use('/api/salary', checkToken, salaryRouter);
 const { lunchRouter } = require('./api/lunch.routes');
 router.use('/api/lunch', checkToken, lunchRouter);
 
+//**********router payment***********/
+const { paymentRouter } = require('./api/payment.routes');
+router.use('/api/payment', checkToken, paymentRouter);
+
 module.exports = { AllRouters: router };

@@ -48,7 +48,9 @@ async function specialList(req, res, next) {
 
 async function list(req, res, next) {
   try {
-    const { fromDate, toDate } = req.query;
+    const { fromDate, toDate, page, limit } = req.query;
+    const currentPage = parseInt(page) || 1;
+    const currentLimit = parseInt(limit) || 10;
 
     if (fromDate || toDate) {
       const dateFilter = buildDateFilter(req.query);
@@ -79,14 +81,36 @@ async function list(req, res, next) {
             count: 1,
           },
         },
+        { $skip: (currentPage - 1) * currentLimit },
+        { $limit: currentLimit },
       ]);
 
       const grandTotal = result.reduce((sum, r) => sum + r.totalPrice, 0);
-      return res.json({ success: true, data: result, grandTotal });
+      return res.json({
+        success: true,
+        data: { docs: result },
+        grandTotal,
+        pagination: {
+          page: currentPage,
+          limit: currentLimit,
+        },
+      });
     }
 
-    const docs = await Doctor.find().sort({ createdAt: -1 });
-    res.json({ success: true, data: docs });
+    const docs =
+      await Doctor.paginate(
+        {},
+        {
+          page: currentPage,
+          limit: currentLimit,
+          sort: { createdAt: -1 },
+        }
+      );
+
+    res.json({
+      success: true,
+      data: docs,
+    });
   } catch (err) {
     next(err);
   }

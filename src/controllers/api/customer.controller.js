@@ -1,5 +1,6 @@
 const Customer = require("../../models/customer.model");
 const { buildDateFilter } = require("../../utils/dateFilter");
+const { paginateQuery } = require('../../utils/paginateQuery');
 
 // CREATE
 async function create(req, res, next) {
@@ -12,32 +13,32 @@ async function create(req, res, next) {
 }
 
 // LIST with date filter + sum of clinicPrice
-async function list(req, res, next) {
-  try {
-    const dateFilter = buildDateFilter(req.query);
+// async function list(req, res, next) {
+//   try {
+//     const dateFilter = buildDateFilter(req.query);
 
-    const customers = await Customer.find(dateFilter)
-      .populate("surgery.surgeryId")
-      .populate("doctor.doctorId")
-      .populate("initialCosts.initialPriceId")
-      .populate("reagent.reagentId")
-      .populate("assist.assistId")
-      .populate("hospital.hospitalId")
-      .sort({ createdAt: -1 });
+//     const customers = await Customer.find(dateFilter)
+//       .populate("surgery.surgeryId")
+//       .populate("doctor.doctorId")
+//       .populate("initialCosts.initialPriceId")
+//       .populate("reagent.reagentId")
+//       .populate("assist.assistId")
+//       .populate("hospital.hospitalId")
+//       .sort({ createdAt: -1 });
 
-    const totalClinicPrice = customers.reduce((sum, c) => sum + (c.clinicPrice || 0), 0);
+//     const totalClinicPrice = customers.reduce((sum, c) => sum + (c.clinicPrice || 0), 0);
 
-    res.json({
-      success: true,
-      data: customers,
-      totalClinicPrice,
-      count: customers.length,
-    });
-  } catch (err) {
-    console.log("Error in list function:", err); // Debug log
-    next(err);
-  }
-}
+//     res.json({
+//       success: true,
+//       data: customers,
+//       totalClinicPrice,
+//       count: customers.length,
+//     });
+//   } catch (err) {
+//     console.log("Error in list function:", err); // Debug log
+//     next(err);
+//   }
+// }
 
 // GET single
 async function getById(req, res, next) {
@@ -74,6 +75,26 @@ async function remove(req, res, next) {
     const customer = await Customer.findByIdAndDelete(req.params.id);
     if (!customer) return res.status(404).json({ success: false, message: "Not found" });
     res.json({ success: true, message: "Deleted" });
+  } catch (err) {
+    next(err);
+  }
+}
+
+async function list(req, res, next) {
+  try {
+    const filter = buildDateFilter(req.query);
+
+    const docs =
+      await Customer.paginate(filter, {
+        page: parseInt(req.query.page) || 1,
+        limit: parseInt(req.query.limit) || 10,
+        sort: { createdAt: -1 },
+      });
+
+    res.json({
+      status: "success",
+      data: docs,
+    });
   } catch (err) {
     next(err);
   }
